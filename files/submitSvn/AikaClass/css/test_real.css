@@ -1,0 +1,139 @@
+.headerbar .testname {
+			    display: inline-block;
+			    color: white;
+			    font-weight: 500;
+			    height: 44px;
+			    line-height: 44px;
+			    font-size: 18px;
+			    float: left;
+			}
+			.headerbar .testtype {
+			    display: inline-block;
+			    color: white;
+			    font-weight: 800;
+			    height: 44px;
+			    line-height: 44px;
+			    font-size: 18px;
+			}
+			.question {
+				background: white;
+				line-height: 22px;
+				font-size: 14px;
+				color: #0c0e10;
+				padding-top: 6px;
+				padding-bottom: 10px;
+			}
+			
+			.answer {
+				background: white;
+			}
+			.answer p {
+				font-size: 14px;
+				color: #0c0e10;
+				margin-bottom: 15px;
+			}
+			.answer p:last-child{
+				margin-bottom: 25px;
+			}
+			.shadow-p {
+				background: #CCCCCC;
+			}
+			p .first {
+				width: 20px;
+				height: 20px;
+				color: white;
+				line-height: 20px;
+				font-size: 6px;
+				position: relative;
+				float: left;
+			}
+			p .first img{
+				width: 100%;
+			}
+			.fontPadding{
+				padding-left: 20px;
+			}
+			p .select {
+				width: 20px;
+				height: 20px;
+				color: white;
+				line-height: 20px;
+				font-size: 6px;
+				position: relative;
+				float: left;
+			}
+			p .select img{
+				width: 100%;
+			}
+			p .err {
+				background: red;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 40px;
+				color: white;
+				font-weight: 900;
+				line-height: 20px;
+				text-align: left;
+				font-size: 20px;
+				margin-right: 10px;
+			}
+			
+			p .suc {
+				background: green;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 40px;
+				color: white;
+				font-weight: 900;
+				line-height: 20px;
+				text-align: left;
+				font-size: 20px;
+				margin-right: 10px;
+			}
+			
+			p .disa {
+				background: #CCCCCC;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 40px;
+				color: #CCCCCC;
+				font-weight: 900;
+				line-height: 20px;
+				text-align: left;
+				font-size: 20px;
+				margin-right: 10px;
+			}
+			.bakimg {
+				padding:0 12px 30px 12px;
+			}
+			.count {
+				padding-right: 5px;
+				font-size: 15px;
+				line-height: 44px;
+				color: white;
+				float: right;
+			}
+			.adjust {
+				line-height: 28px;
+				display: block;
+			}
+			.adjust-err{
+				color: #0c0e10;
+				font-size: 13px;
+			}
+			.adjust-suc{
+				color: #0c0e10;
+				font-size: 13px;
+			}
+			#adjust_err {
+				display: none;
+			}
+			#adjust_suc {
+				display: none;
+			}
+			#explain {
+				display: none;
+			}

@@ -1,0 +1,154 @@
+.mui-table-view-cell {
+    position: relative;
+    overflow: hidden;
+    padding: 0px 0px;
+}
+
+.mui-content>.mui-table-view:first-child {
+    margin-top: 0px;
+}
+.mui-table-view {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    background-color: #fff;
+}
+
+.mui-table-view:before {
+    position: absolute;
+    right: 0;
+    left: 0;
+     height: 0px; 
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+    top: -1px;
+}
+Pseudo ::after element
+.mui-table-view:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+     height: 0px; 
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+
+.mui-table-view-cell:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+     left: 15px; 
+     height: 0px; 
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+.mui-table-view-cell.mui-collapse.mui-active
+{
+    margin-top: 0px;
+}
+
+.ull
+{
+	margin-top: 15px;
+}
+.gap
+{
+	width: 100%;
+	height: 5px;
+	background-color: #efeff4;
+}
+.deckItem
+{
+	height: 46px;
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+}
+.deckItem .go
+{
+	height: 100%;
+	width: 33px;
+	line-height: 46px;
+	padding-left: 3px;
+	float: right;
+	color: #BBBBBB;
+}
+.deckItem .dcounts
+{
+	height: 100%;
+	width: 33px;
+	float: right;
+}
+.deckItem .dcounts .rev
+{
+	height: 50%;
+	width: 100%;
+	font-size: 14px;
+	text-align: right;
+	color: green;
+}
+.deckItem .dcounts .new
+{
+	height: 50%;
+	width: 100%;
+	font-size: 14px;
+	text-align: right;
+	color: blue;
+}
+
+.deckItem .deck_title
+{
+	height: 100%;
+	width: auto;
+	color: black;
+	
+}
+.deckItem .deck_title .title_plus
+{
+	height: 100%;
+	width: 34px;
+	color: #007aff;
+	line-height: 46px;
+	text-align: center;
+	float: left;
+}
+.deckItem .deck_title .title_name
+{
+	height: 100%;
+	width: auto;
+	padding-bottom: 4px;
+	line-height: 46px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow:ellipsis; 
+}
+
+
+
+
+
+
+
+
+
+			/*<div class="deckItem">
+		    		<div class="title">
+		    			
+		    		</div>
+		    		<div class="dcounts">
+		    			
+		    		</div>
+		    		<div class="go">
+		    			
+		    		</div>
+		    	
+		    </div>*/

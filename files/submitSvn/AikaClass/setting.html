@@ -1,0 +1,500 @@
+<!doctype html>
+<!--艾卡随堂个人中心的设置页面 1.1版本-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar- style" content="black">
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+	</head>
+	<style>
+		.mui-views,
+		.mui-view,
+		.mui-pages,
+		.mui-page,
+		.mui-page-content {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+		}
+		.mui-pages {
+			top: 44px;  
+			height: auto;
+		}
+		.mui-page.mui-transitioning {
+			-webkit-transition: -webkit-transform 300ms ease;
+			transition: transform 300ms ease;
+		}
+		.mui-page-left {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		.mui-ios .mui-page-left {
+			-webkit-transform: translate3d(-20%, 0, 0);
+			transform: translate3d(-20%, 0, 0);
+		}
+		.mui-android .mui-navbar-inner.mui-navbar-left {
+			opacity: 0;
+		}
+		.mui-ios .mui-navbar-left .mui-left,
+		.mui-ios .mui-navbar-left .mui-center,
+		.mui-ios .mui-navbar-left .mui-right {
+			opacity: 0;
+		}
+		.mui-navbar .mui-btn-nav {
+			-webkit-transition: none;
+			transition: none;
+			-webkit-transition-duration: .0s;
+			transition-duration: .0s;
+		}
+		.mui-navbar .mui-bar .mui-title {
+			margin-left: 0 !important;
+			display: inline-block;
+			width: auto;
+		}
+		.mui-page-shadow {
+			position: absolute;
+			right: 100%;
+			top: 0;
+			width: 16px;
+			height: 100%;
+			z-index: -1;
+			content: '';
+		}
+		.mui-page-shadow {
+			background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+			background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+		}
+		.mui-navbar-inner.mui-transitioning,
+		.mui-navbar-inner .mui-transitioning {
+			-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+			transition: opacity 300ms ease, transform 300ms ease;
+		}
+		.mui-page {
+			display: none;
+		}
+		.mui-pages .mui-page {
+			display: block;
+		}
+
+	
+		.bigSetting{
+			/*margin-top: 44px;*/
+			padding:0 25px;
+		}
+		.bigSetting .bigFont{
+			font-size: 33px;
+			color: #474747;
+			font-weight: bolder;
+		}
+		.bigSetting li{
+			border-bottom: 1px solid #dbdbdb;
+		}
+		.bigSetting li:last-child{
+			border-bottom: 0px solid #dbdbdb;
+		}
+		.bigSetting li div{
+			display: inline-block;
+		}
+		.bigSetting .leftFont{
+			float: left;
+			font-size: 19px;
+			color: #474747;
+		}
+		.bigSetting .rightFont{
+			float: right;
+			color: #a8a9a9;
+		}
+	</style>
+	<body class="mui-fullscreen">
+		<!--页面主结构开始-->
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<div id="setting" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left returnBack" id="returnBack">
+					<img src="images/left.png" class="home-return" />
+				</button>
+			</div>
+			<div class="mui-page-content">
+			<div class="bigSetting">
+				<div class="bigFont">设置</div>
+				<ul style="margin: 0;padding: 0;" class="">
+					<li>
+						<div class="leftFont">专属服务</div>
+						<div class="leftFont rightFont service">已认证</div>
+					</li>
+					<li>
+						<a href="#definition" style="display: inline-block;width: 100%;">
+							<div class="leftFont">视频清晰度</div>
+							<img class="goVideo" src="images/right.png" style="height: 15px;margin-left: 10px;float: right;"/>
+							<div class="leftFont rightFont mylist-video " style="color: #474747;">高清</div>
+							
+						</a>
+						
+					</li>
+					<li style="">
+						<div class="leftFont mui-ellipsis">允许非WI-FI网络播放视频</div>
+						<div id="" class="mui-switch mui-switch-mini rightFont palyAudio">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+					<li>
+						<div class="leftFont mui-ellipsis">允许非WI-FI网络下载视频</div>
+						<div id="" class="mui-switch  mui-switch-mini rightFont downloadAudio">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+					<li>
+						<div class="leftFont">清理缓存</div>
+						<div class="leftFont rightFont clearCache">3M</div>
+					</li>
+					<li>
+						<div class="leftFont">清理离线下载内容</div>
+						<div class="leftFont rightFont clearOfflineData">0MB</div>
+					</li>
+					<li class="liLast">
+						<a href="#about" style="display: inline-block;width: 100%;">
+							<div class="leftFont">关于</div>
+							<div class="leftFont rightFont"><img src="images/right.png" style="height: 15px;"/></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		
+		<div id="definition" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left returnBack">
+					<img src="images/left.png" class="home-return" />
+				</button>
+				<h1 class="mui-center mui-title">视频清晰度</h1>
+			</div>
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<ul class="mui-table-view mui-table-view-radio">
+					<li class="mui-table-view-cell myli mui-selected  mytext-video">
+						<a class="mui-navigate-right mytext">超清</a>
+					</li>
+					<li class="mui-table-view-cell myli  mytext-video">
+						<a class="mui-navigate-right  mytext">高清</a>
+					</li>		
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div id="about" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left returnBack">
+					<img src="images/left.png" class="home-return" />
+				</button>
+				<h1 class="mui-center mui-title">关于</h1>
+			</div>
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<!--<ul class="mui-table-view mui-table-view-radio">
+					<li class="mui-table-view-cell myli mui-selected  mytext-video">
+						<a class="mui-navigate-right mytext">超清</a>
+					</li>
+					<li class="mui-table-view-cell myli  mytext-video">
+						<a class="mui-navigate-right  mytext">高清</a>
+					</li>		
+				</ul>-->
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.view.js "></script>
+		<script type="text/javascript">
+		mui.init();
+		//初始化单页view
+		var viewApi = mui('#app').view({
+			defaultPage: '#setting'
+		});
+		//初始化单页的区域滚动
+//		mui('.mui-scroll-wrapper').scroll();
+	
+		
+		var view = viewApi.view;
+		(function($) {
+			//处理view的后退与webview后退
+			var oldBack = $.back;
+			$.back = function() {
+				if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
+					viewApi.back();
+				} else { //执行webview后退
+					oldBack();
+				}
+			};
+			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+			view.addEventListener('pageBeforeShow', function(e) {
+				//				console.log(e.detail.page.id + ' beforeShow');
+			});
+			view.addEventListener('pageShow', function(e) {
+				//				console.log(e.detail.page.id + ' show');
+			});
+			view.addEventListener('pageBeforeBack', function(e) {
+				//				console.log(e.detail.page.id + ' beforeBack');
+			});
+			view.addEventListener('pageBack', function(e) {
+				//				console.log(e.detail.page.id + ' back');
+			});
+		})(mui);
+		
+		
+			function hasClass(obj, cls) {//检测有没有该类名======对象如果是数组则要加下标，类名用引号包住
+			    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+			}
+			
+			function addClass(obj, cls) {//添加类名
+			    if (!this.hasClass(obj, cls)){    
+			    	obj.className += " " + cls
+			    };
+			}
+			
+			function removeClass(obj, cls) {//移除类名
+			    if (hasClass(obj, cls)) {
+			        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+			        obj.className = obj.className.replace(reg, ' ');
+			    }
+			}
+			
+			function toggleClass(obj,cls){//开关类名
+				if(hasClass(obj,cls)){
+			    	removeClass(obj, cls);
+				}else{
+			    	addClass(obj, cls);
+				}
+			}
+		
+		
+		
+			var bodyH=window.screen.height;
+			var bigFont=document.getElementsByClassName('bigFont')[0];
+			var goVideo=document.getElementsByClassName('goVideo')[0];
+			var bigSetting=document.getElementsByClassName('bigSetting')[0];
+			bigFont.style.height=(bodyH*0.1)+'px';
+			bigFont.style.lineHeight=(bodyH*0.1)+'px';
+			goVideo.style.marginTop=(bodyH*0.045)+'px';
+			var allLi=bigSetting.getElementsByTagName('li');
+			for(var i=0;i<allLi.length;i++){
+				allLi[i].style.height=(bodyH*0.118)+'px';
+			}
+			var leftFont=document.getElementsByClassName('leftFont');
+			for(var i=0;i<leftFont.length;i++){
+				leftFont[i].style.lineHeight=(bodyH*0.118)+'px';
+			}
+
+			var liLast=document.getElementsByClassName('liLast')[0];
+			var liLastFont=liLast.getElementsByClassName('leftFont');
+			liLast.style.height=(bodyH*0.11)+'px';
+			for(var i=0;i<liLastFont.length;i++){
+				liLastFont[i].style.lineHeight=(bodyH*0.11)+'px';
+			}
+			var muiSwith=document.getElementsByClassName('mui-switch');
+			for(var i=0;i<muiSwith.length;i++){
+				muiSwith[i].style.marginTop=(bodyH*0.03)+'px';
+			}
+			
+			
+			
+			var collectSettingData={};
+			
+			var settingData={
+				//专属服务
+				"service":"已认证",
+				//视频清晰度
+				"video":1,
+				//允许非WI-FI网络播放视频
+				"palyAudio":true,
+				//允许非WI-FI网络下载视频
+				"downloadAudio":true,
+				//清理缓存
+				"clearCache":"30MB",
+				//清理离线下载内容
+				"clearOfflineData":"100MB",
+				//关于
+				"about":""
+			}
+			
+			//专属服务
+			var service;
+			//视频清晰度
+			var video;
+			//允许非WI-FI网络播放视频
+			var palyAudio;
+			//允许非WI-FI网络下载视频
+			var downloadAudio;
+			//清理缓存
+			var clearCache;
+			//清理离线下载内容
+			var clearOfflineData;
+			//关于
+			var about;
+			
+			function handleSettingData(settingData){
+				service=settingData.service;
+				video=settingData.video;
+				palyAudio=settingData.palyAudio;
+				downloadAudio=settingData.downloadAudio;
+				clearCache=settingData.clearCache;
+				clearOfflineData=settingData.clearOfflineData;
+				about=settingData.about;
+			}
+			
+			
+			function shoeAllData(){
+				showListValue('service',service);
+				showListValue('clearCache',clearCache);
+				showListValue('clearOfflineData',clearOfflineData);
+				showSwithValue('palyAudio',palyAudio);
+				showSwithValue('downloadAudio',downloadAudio);
+				showVideoValue('video',video);
+			}
+			
+			//显示内容区域的数据
+			function showListValue(key,value){
+				var listClass=document.getElementsByClassName(key)[0];
+				listClass.innerText=value;
+			}
+			
+			//显示swith
+			function showSwithValue(key,value){
+				var div=document.getElementsByClassName(key)[0];
+				if(value==true){
+					addClass(div,'mui-active');
+				}else{
+					removeClass(div,'mui-active');
+				};
+				var tempSwitchValue;
+				//var tempSwitchValue = key;
+				code = "tempSwitchValue = " + key;
+				eval(code);
+				
+				div.onclick=function(){
+					if(tempSwitchValue){
+						settingData[key]=false;
+					}else{
+						settingData[key]=true;
+					}
+				}
+			}
+			
+			//触发的返回按钮事件
+			var returnBack = document.getElementById("returnBack");
+			returnBack.addEventListener("tap",function () {
+				mui.back();
+			});
+			
+			function showVideoValue(key,value){
+				//list列表中的每一个包含一个与这个key对应的class;
+				mytext = 'mytext-' + key;
+				mylist = 'mylist-' + key;
+	
+				
+				var allLiItems=document.getElementsByClassName(mytext);
+				var targetItem=document.getElementsByClassName(mylist)[0];
+				targetItem.innerHTML=allLiItems[value].innerText;
+				settingData[key]=value;
+				for(var i=0;i<allLiItems.length;i++){	
+					//展现数据；
+					allLiItems[i].index=i;
+					removeClass(allLiItems[i],'mui-selected');
+					addClass(allLiItems[value],'mui-selected');
+					
+					//设置监听，搜集数据
+					allLiItems[i].onclick=function(){ 
+						targetItem.innerHTML=allLiItems[this.index].innerText;
+						settingData[key]=this.index;
+						mui.trigger(returnBack,'tap');
+					}	
+				}
+			}
+			function addButtonsListener(bridge){
+				mui('.mui-bar').off('tap','#returnBack');
+				mui('.mui-bar').on('tap','#returnBack',function(){
+					console.log(settingData);
+					//接口-------------------------
+					<js-ios>
+						bridge.callHandler('collectRetrunBack', settingData, function(response) {
+		                 	//log('JS got response', response)
+		              	});
+					</js-ios>
+					<js-android>
+						window.xuming.backToParent(settingData); 
+					</js-android>				
+				});
+			}
+			
+			/////////////////bridge/////////////////////
+			<js-ios>
+				window.onerror = function(err) {
+			        log('window.onerror: ' + err)
+				}
+				
+				
+			    function setupWebViewJavascriptBridge(callback) {
+			        if (window.WebViewJavascriptBridge) {
+			            return callback(WebViewJavascriptBridge);
+			        }
+			        if (window.WVJBCallbacks) {
+			            return window.WVJBCallbacks.push(callback);
+			        }
+			        window.WVJBCallbacks = [callback];
+			        var WVJBIframe = document.createElement('iframe');
+			        WVJBIframe.style.display = 'none';
+			        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+			        document.documentElement.appendChild(WVJBIframe);
+			        setTimeout(function() {
+			            document.documentElement.removeChild(WVJBIframe)
+			            }, 0);
+			    }
+			
+			    setupWebViewJavascriptBridge(function(bridge) {
+			        bridge.registerHandler('settingJavascriptHandler', function(data, responseCallback) {
+	                    
+	                    initFirstWindow(bridge, data);
+	                   
+	   		        });
+	
+			    });
+			</js-ios>
+			
+			/////////////////bridge/////////////////////
+			
+			
+			
+			function initFirstWindow(bridge,serverData){
+				if(serverData==null){
+					serverData=settingData;
+				}
+				
+				handleSettingData(serverData);
+				shoeAllData();
+				addButtonsListener(bridge);
+			}
+			
+			
+			window.onload=initFirstWindow(null,null);
+			
+		</script>
+	</body>
+
+</html>

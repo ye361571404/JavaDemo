@@ -1,0 +1,13 @@
+.mui-media-body{
+	line-height: 42px;
+}
+.mui-table-view {
+	margin-top: 20px;
+}
+.mui-table p{
+	color: #666;
+}
+.mui-table-cell p{
+	position: absolute;
+    top: 5px;
+}

@@ -1,0 +1,54 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 
+ * */
+body{
+	background-color: #fff;
+}
+li{
+	list-style: none;
+}
+.mui-plus.mui-android header.mui-bar{
+	display: none;
+}
+.mui-plus.mui-android .mui-bar-nav~.mui-content{
+	padding: 0;
+}
+
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: 0 0px 0px #ccc; 
+    box-shadow: 0 0px 0px #ccc; 
+    background-color: #fff;
+}
+.mui-bar .mui-btn-nav.mui-pull-left {
+     margin-left: 15px; 
+}
+.mui-bar .mui-btn-nav.mui-pull-right {
+    margin-right: 15px;
+    color: #474747;
+    font-size: 15px;
+}
+.home-return{
+	height: 15px;
+	margin-top: 15px;
+    display: inline-block;
+}
+.mui-title{
+	font-size: 15px;
+	color: #474747;
+}
+.returnBack{
+	width: 100px;
+	text-align: left;
+}

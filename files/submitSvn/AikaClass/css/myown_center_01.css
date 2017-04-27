@@ -1,0 +1,168 @@
+/*头部导航*/
+.mui-bar-nav{
+	background:#1DACF9;
+}
+.mui-bar-nav a,.mui-bar-nav h1,.mui-bar-nav button{
+	color:#fff !important;
+}
+
+/*公用列表文字大小*/
+.list-text .mui-input-row label,.list-text .mui-input-row input{
+	font-size: 14px;
+}
+/*公用按钮*/
+.btn-block{
+	background:#1DACF9;
+	color:#fff;
+	border:0px;
+	width:90%;
+	left:5%;
+	right:5%;
+	height:40px;
+	margin:15px 0px;
+}
+.new-btn{
+	background:#C5E5F8;
+	color:	#3695C7;
+	border:0px;
+	padding:2px 10px;
+	font-size:12px;
+}
+/*公用线*/
+.border-bottom{
+	border-bottom:1px solid #f0f0f0;
+}
+.border-right{
+	border-right:1px solid #f0f0f0;
+}
+/*公用颜色*/
+.orange{
+	color:#FF7200;
+}
+.blue{
+	color:#1DACF9;
+}
+.gray{
+	color:#999;
+}
+.c-1{
+	color:#029CEF !important;
+}
+.c-2{
+	color:#85C50C !important;
+}
+.c-3{
+	color:#FF5B4C !important;
+}
+.c-4{
+	color:#FFB026 !important;
+}
+.bgc-1{
+	background:#029CEF !important;
+}
+.bgc-2{
+	background:#85C50C !important;
+}
+.bgc-3{
+	background:#FF5B4C !important;
+}
+.bgc-4{
+	background:#FFB026 !important;
+}
+/*公用内边距*/
+.public-padding{
+	padding: 10px 15px;
+}
+/*公用列表文字大小*/
+.public-list-txt li{
+	font-size:14px;
+}
+/*-----------------------*/
+/*登录*/
+.login-form{
+	margin-top:20px;
+}
+.login-bottom{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.login-bottom button{
+	padding: 0px;
+	color:#666;
+	font-size:13px;
+}
+/*注册页面*/
+.btn-yzm{
+	position: absolute;
+	right:0px;
+	top:10px;
+	padding: 0px 10px;
+	font-size:13px;
+	border:0px;
+	color:#1DACF9;
+}
+/*个人中心*/
+.home-nav{
+	box-shadow: 0 0 0;
+}
+.home-box{
+	position: relative;
+}
+.home-top img{
+	width:100%;
+	height:180px;
+}
+.home-list li a .mui-icon{
+	font-size:18px;
+	width:30px;
+	height:30px;
+	display: inline-block;
+	border-radius:100px;
+	text-align: center;
+	line-height: 30px;
+	color:#fff;
+	margin-right:10px;
+}
+.home-top-userinfo{
+	position: absolute;
+	top:10%;
+	width:100%;
+	text-align: center;
+}
+.home-top-userinfo img{
+	width:80px;
+	height:80px;
+	border-radius:100px;
+}
+.home-top-userinfo h4{
+	color:#fff;
+	font-weight:normal;
+}
+/*公用返回键*/
+.home-return{
+	height: 20px;
+	margin-top: 12px;
+	padding-left: 5px;
+}
+/*公用title*/
+.mui-bar .mui-title{
+	font-size:18px ;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	margin-left: 0 !important;
+}
+/*公用取消标题的margin*/
+.mui-bar .mui-btn-nav.mui-pull-left {
+     margin-left: 0; 
+}
+/*公共取消盒子阴影*/
+.mui-bar-nav {
+     -webkit-box-shadow: 0 1px 6px transparent !important;  
+    box-shadow: 0 1px 6px transparent !important;
+}
+/*公共进入箭头*/
+.photo{
+	height: 20px;
+	float: right;
+}

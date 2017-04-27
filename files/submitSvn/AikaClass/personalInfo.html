@@ -1,0 +1,415 @@
+<!doctype html>
+<!--艾卡随堂个人中心的编辑个人资料页面  1.1版本-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+	</head>
+	<style>
+	
+		.mui-views,
+		.mui-view,
+		.mui-pages,
+		.mui-page,
+		.mui-page-content {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #fff;
+		}
+		.mui-pages {
+			top: 44px;  
+			height: auto;
+		}
+		.mui-page.mui-transitioning {
+			-webkit-transition: -webkit-transform 300ms ease;
+			transition: transform 300ms ease;
+		}
+		.mui-page-left {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		.mui-ios .mui-page-left {
+			-webkit-transform: translate3d(-20%, 0, 0);
+			transform: translate3d(-20%, 0, 0);
+		}
+		.mui-android .mui-navbar-inner.mui-navbar-left {
+			opacity: 0;
+		}
+		.mui-ios .mui-navbar-left .mui-left,
+		.mui-ios .mui-navbar-left .mui-center,
+		.mui-ios .mui-navbar-left .mui-right {
+			opacity: 0;
+		}
+		.mui-navbar .mui-btn-nav {
+			-webkit-transition: none;
+			transition: none;
+			-webkit-transition-duration: .0s;
+			transition-duration: .0s;
+		}
+		.mui-navbar .mui-bar .mui-title {
+			margin-left: 0 !important;
+			display: inline-block;
+			width: auto;
+		}
+		.mui-page-shadow {
+			position: absolute;
+			right: 100%;
+			top: 0;
+			width: 16px;
+			height: 100%;
+			z-index: -1;
+			content: '';
+		}
+		.mui-page-shadow {
+			background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+			background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+		}
+		.mui-navbar-inner.mui-transitioning,
+		.mui-navbar-inner .mui-transitioning {
+			-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+			transition: opacity 300ms ease, transform 300ms ease;
+		}
+		.mui-page {
+			display: none;
+		}
+		.mui-pages .mui-page {
+			display: block;
+		}
+	
+		.bigPersonal{
+			padding:0 25px;
+		}
+		.bigPersonal li{
+			border-bottom: 1px solid #dbdbdb;
+		}
+		.bigPersonal .headFont{
+			float: left;
+			font-size: 19px;
+			color: #474747;
+			line-height: 77px;
+		}
+		.bigPersonal .headImg{
+			float: right;
+			margin-top: 21px;
+			margin-right: 2px;
+			width: 25px;
+			height: 33px;
+		}
+		.headImg img{
+			width: 100%;
+			height: 100%;
+		}
+		.personalName{
+			padding: 20px 0;
+		}
+		.personalName div{
+			font-size: 19px;
+			color: #474747;
+			line-height: 38px;
+		}
+		.atGight{
+			float: right;
+			height: 15px;
+			margin-top: 31px;
+			margin-right: 6px;
+		}
+	</style>
+	<body class="mui-fullscreen">
+		<!--页面主结构开始-->
+		<div id="app" class="mui-views">
+			<div class="mui-view">
+				<div class="mui-navbar">
+				</div>
+				<div class="mui-pages">
+				</div>
+			</div>
+		</div>
+		<div id="setting" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left returnBack collectData" id="returnBack">
+					<img src="images/left.png" class="home-return" />
+				</button>
+				<h1 class="mui-center mui-title">编辑个人资料</h1>
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-right returnBack" id="" style="text-align: right;">
+					保存
+				</button>
+			</div>
+		
+			<div class="mui-page-content">
+				<ul class="bigPersonal">
+					<li class="head" style="height: 78px;">
+						<div class="headFont" style="display: inline-block;">更换头像</div>
+						<div class="headImg" style="display: inline-block;"><img src="images/1.jpg" id="head-img" /></div>
+					</li>
+					<li class="personalName">
+						<div>昵称</div>
+						<div class="surname">Hello Kitty</div>
+					</li>
+					<li class="personalName">
+						<div>签名</div>
+						<div class="autograph">就给你看看把你卡巴内利都快被你看得开了</div>
+					</li>
+					<li style="height: 77px;">
+						<a href="#information" style="display: inline-block;width: 100%;">
+							<div class="headFont" style="display: inline-block;">修改认证信息</div>
+							<div class="atGight" style="display: inline-block;"><img src="images/right.png" height="100%" /></div>
+						</a>				
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="information" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left returnBack">
+					<img src="images/left.png" class="home-return" />
+				</button>
+				<h1 class="mui-center mui-title">认证信息</h1>
+			</div>
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<!--<ul class="mui-table-view mui-table-view-radio">
+					<li class="mui-table-view-cell myli mui-selected  mytext-video">
+						<a class="mui-navigate-right mytext">超清</a>
+					</li>
+					<li class="mui-table-view-cell myli  mytext-video">
+						<a class="mui-navigate-right  mytext">高清</a>
+					</li>		
+				</ul>-->
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.view.js "></script>
+		<script type="text/javascript">
+			
+		mui.init();
+		//初始化单页view
+		var viewApi = mui('#app').view({
+			defaultPage: '#setting'
+		});
+		//初始化单页的区域滚动
+//		mui('.mui-scroll-wrapper').scroll();
+	
+		
+		var view = viewApi.view;
+		(function($) {
+			//处理view的后退与webview后退
+			var oldBack = $.back;
+			$.back = function() {
+				if (viewApi.canBack()) { //如果view可以后退，则执行view的后退
+					viewApi.back();
+				} else { //执行webview后退
+					oldBack();
+				}
+			};
+			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
+			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
+			view.addEventListener('pageBeforeShow', function(e) {
+				//				console.log(e.detail.page.id + ' beforeShow');
+			});
+			view.addEventListener('pageShow', function(e) {
+				//				console.log(e.detail.page.id + ' show');
+			});
+			view.addEventListener('pageBeforeBack', function(e) {
+				//				console.log(e.detail.page.id + ' beforeBack');
+			});
+			view.addEventListener('pageBack', function(e) {
+				//				console.log(e.detail.page.id + ' back');
+			});
+		})(mui);
+			
+			
+			
+			var bodyH=window.screen.height;
+			
+			//头像事件
+			function changeHeadImage(url){				
+				//删除头像节点
+				var headImg=document.getElementsByClassName('headImg')[0];
+				var headChild=document.getElementById('head-img');
+				headImg.removeChild(headChild);
+				
+				//重建头像节点
+				var newNode = document.createElement("img");
+			  	newNode.setAttribute("id", "head-img");
+			  	newNode.setAttribute("src",url+ "?temp=" + Math.random());
+				headImg.appendChild(newNode);
+
+			}
+			changeHeadImage("images/1.jpg");
+			
+			
+			
+			var personalData={
+				//昵称
+				"surname":"haha",
+				//签名
+				"autograph":"快快乐乐，开开心心！"
+			}
+			//昵称
+			var surname;
+			//签名
+			var autograph;
+			
+			//处理数据
+			function handleAllData(personalData){
+				surname=personalData.surname;
+				autograph=personalData.autograph;
+			}
+			//展现数据
+			function showAllData(){
+				showLiInputValue('surname', surname);
+				showLiInputValue('autograph', autograph);
+			}
+			
+			
+			function showLiInputValue(key, value){
+				var unit;  //单位；
+				var hint;   //提示输入的内容：“请输入***”
+				
+				if (key == "surname") {
+					unit = "";
+					hint = "昵称";
+				} else if (key == "autograph"){
+					unit = "";
+					hint = "签名";
+				} 
+				//debugger;
+				var btn=document.getElementsByClassName(key)[0];
+				
+				//字数超过一定长度，显示省略号
+				if(value.length>=26){
+					value=value.substring(0,26)+"...";
+				}
+				var placeholder=value;
+				btn.innerText=value + unit;
+				personalData[key]=value;
+				btn.addEventListener('tap', function(e) {
+					e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+					var btnArray = ['取消', '确定'];
+					mui.prompt(hint,placeholder, '请输入', btnArray, function(e) {
+						if (e.index == 1) {
+							
+							if(e.value==false){
+								btn.innerText=value;
+							}else{
+								btn.innerText = e.value+unit;
+							}
+							//收集的数据的字数超过一定长度，显示省略号
+							var autographLength=document.getElementsByClassName('autograph')[0].innerText;
+							if(autographLength.length>=26){
+								autographLength=autographLength.substring(0,26)+"...";
+							}
+							document.getElementsByClassName('autograph')[0].innerText=autographLength;
+							//key = e.value;
+							personalData[key]=e.value;
+							return personalData;
+							
+						} 
+					})
+				});	
+			}
+			
+			//按钮监控
+			function addButtonsListener(bridge){
+				mui('.mui-bar-nav').off('tap','.collectData');
+				mui('.mui-bar-nav').on('tap','.collectData',function(){
+					
+					console.log(personalData);
+					//接口----------------------------------------------
+					<js-ios>
+						bridge.callHandler('collectRetrunBack', personalData, function(response) {
+	                   		//log('JS got response', response)
+	                	});
+					</js-ios>
+					<js-android>
+						window.xuming.backToParent(personalData);   
+					</js-android>
+					 						
+				});
+				
+				mui('.bigPersonal').off('tap','.head');
+				mui('.bigPersonal').on('tap','.head',function(){
+					//切换头像接口---------------------------
+					<js-ios>
+						bridge.callHandler('openImages',function(response) {
+	                   		//log('JS got response', response)
+	                	});
+					</js-ios>
+					<js-android>
+						window.xuming.openImages();
+					</js-android>				
+				});
+			}
+			
+						/////////////////bridge/////////////////////
+			<js-ios>
+				window.onerror = function(err) {
+			        log('window.onerror: ' + err)
+				}
+				
+				
+			    function setupWebViewJavascriptBridge(callback) {
+			        if (window.WebViewJavascriptBridge) {
+			            return callback(WebViewJavascriptBridge);
+			        }
+			        if (window.WVJBCallbacks) {
+			            return window.WVJBCallbacks.push(callback);
+			        }
+			        window.WVJBCallbacks = [callback];
+			        var WVJBIframe = document.createElement('iframe');
+			        WVJBIframe.style.display = 'none';
+			        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+			        document.documentElement.appendChild(WVJBIframe);
+			        setTimeout(function() {
+			            document.documentElement.removeChild(WVJBIframe)
+			            }, 0);
+			    }
+			
+			    setupWebViewJavascriptBridge(function(bridge) {
+			        bridge.registerHandler('personalJavascriptHandler', function(data, responseCallback) {
+	                    
+	                    initFirstWindow(bridge, data);
+	                   
+	   		        });
+	
+			    });
+			</js-ios>
+			
+						
+			/**/
+			
+			/////////////////bridge/////////////////////
+			
+			
+			function initFirstWindow(bridge,serverData){
+				if(serverData==null){
+					serverData=personalData;
+				}
+				
+				handleAllData(serverData);
+				showAllData();
+				addButtonsListener(bridge);
+			}
+			
+			window.onload=initFirstWindow(null,null);
+//			var textBox=document.getElementsByClassName('textBox')[0];
+//			textBox.style.height=(bodyH*0.277)+'px';
+//			var contactText=document.getElementsByClassName('contactText')[0];
+//			contactText.style.height=(bodyH*0.063)+'px';
+//			contactText.style.paddingTop=(bodyH*0.009)+'px';
+//			contactText.style.paddingBottom=(bodyH*0.009)+'px';
+//			var tijaio=document.getElementsByClassName('tijaio')[0];
+//			tijaio.style.height=(bodyH*0.066)+'px';
+//			tijaio.style.lineHeight=(bodyH*0.066)+'px';
+		</script>
+	</body>
+
+</html>

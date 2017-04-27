@@ -1,0 +1,244 @@
+/*pupover菜单*/
+			.mui-popover {
+				height: 320px;
+				width: 160px;
+			}
+			
+			li div .icon-span {
+				margin-right: 5px;
+				color: #007aff;
+				display: inline-block;
+				height: 20px;
+				font-weight: 900;
+				width: 20px;
+				text-align: center;
+				line-height: 18px;
+				font-size: 18px;
+				border-radius: 5px;
+			}
+			.mui-popover li {
+				padding: 11px 13px;
+			}
+		
+/*shadow*/		
+	
+			.shadowclass {
+			    opacity: 1;
+			    position: fixed;
+			    z-index: 998;
+			    top: 0;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    -webkit-transition-duration: 400ms;
+			    transition-duration: 400ms;
+			    background: rgba(0, 0, 0, .4);
+			}
+			
+			#shadow {
+				display: none;
+			}
+/*选项的Box*/
+			.boxclass {
+			    transform: translate3d(-50%, -50%, 0) scale(1);
+			    opacity: 1;
+			    position: fixed;
+			    z-index: 10000;
+			    top: 50%;
+			    left: 50%;
+			    overflow: hidden;
+			    width: 270px;
+			    text-align: center;
+			    color: #000;
+			    border-radius: 13px;
+			    background: white;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			}
+			#box {
+				display: none;
+			}
+			.boxclass .inner {
+				position: relative;
+			    padding: 15px;
+			    border-radius: 13px 13px 0 0;
+			    background: rgba(255, 255, 255, .95);
+			}
+			.boxclass .inner .title {
+				font-size: 18px;
+			    font-weight: 500;
+			    text-align: center;
+			}
+			.boxclass .inner .text {
+				font-family: inherit;
+			    font-size: 14px;
+			    margin: 5px 0 0;
+			}
+			.boxclass .buttons {
+				position: relative;
+			    display: -webkit-box;
+			    display: -webkit-flex;
+			    display: flex;
+			    height: 44px;
+			    -webkit-box-pack: center;
+			    -webkit-justify-content: center;
+			    justify-content: center;
+			}
+			.boxclass .buttons .button {
+				font-size: 17px;
+				font-weight: 600;
+			    line-height: 44px;
+			    position: relative;
+			    display: block;
+			    overflow: hidden;
+			    box-sizing: border-box;
+			    width: 100%;
+			    height: 44px;
+			    padding: 0 5px;
+			    cursor: pointer;
+			    text-align: center;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    color: #007aff;
+			    background: rgba(255, 255, 255, .95);
+			    -webkit-box-flex: 1;
+			    border-top: 1px solid #ccc;
+			}
+/*下载或导入中。。。BOX*/
+			#progress-download-box {
+				display: none;
+			}
+			.progress-download-boxclass {
+			    transform: translate3d(-50%, -50%, 0) scale(1);
+			    opacity: 1;
+			    position: fixed;
+			    z-index: 10000;
+			    top: 50%;
+			    left: 50%;
+			    overflow: hidden;
+			    width: 170px;
+			    text-align: center;
+			    color: #000;
+			    border-radius: 13px;
+			    background: white;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    padding-top: 10px;
+			}
+			.progress-download-boxclass .progress-circle {
+				width: 40px;
+				height: 40px;
+			}
+			.progress-download-boxclass .inner {
+				position: relative;
+			    padding-top: 10px;
+			    border-radius: 13px 13px 0 0;
+			    background: rgba(255, 255, 255, .95);
+			}
+			.progress-download-boxclass .inner .title {
+				font-size: 18px;
+			    font-weight: 500;
+			    text-align: center;
+			    color: #007aff;
+			}
+			.progress-download-boxclass .inner .text {
+				font-family: inherit;
+			    font-size: 14px;
+			    margin: 5px 0 0;
+			    margin-bottom: 15px;
+			}
+			
+
+/*下载或导入成功* 定时消失*/
+			#progress-ok-box {
+				display: none;
+			}
+			.progress-ok-boxclass {
+			    transform: translate3d(-50%, -50%, 0) scale(1);
+			    opacity: 1;
+			    position: fixed;
+			    z-index: 10000;
+			    top: 50%;
+			    left: 50%;
+			    overflow: hidden;
+			    width: 170px;
+			    text-align: center;
+			    color: #000;
+			    border-radius: 13px;
+			    background: white;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    padding-top: 10px;
+			}
+			.progress-ok-boxclass .progress-circle {
+				width: 40px;
+				height: 40px;
+				border: 2px solid green;
+				position: relative;
+			    border-radius: 100px;
+			    line-height: 40px;
+			    font-size: 40px;
+			    font-weight: 800;
+			    color: green;
+			    margin-bottom: 10px;
+			}
+			.progress-ok-boxclass .inner .title {
+				font-size: 18px;
+			    font-weight: 500;
+			    text-align: center;
+			    color: #007aff;
+			}
+			.progress-ok-boxclass .inner .text {
+				font-family: inherit;
+			    font-size: 14px;
+			    margin: 5px 0 0;
+			    margin-bottom: 10px;
+			}
+
+/*下载或导入失败* 定时消失*/
+			#progress-err-box {
+				display: none;
+			}
+			.progress-err-boxclass {
+			    transform: translate3d(-50%, -50%, 0) scale(1);
+			    opacity: 1;
+			    position: fixed;
+			    z-index: 10000;
+			    top: 50%;
+			    left: 50%;
+			    overflow: hidden;
+			    width: 170px;
+			    text-align: center;
+			    color: #000;
+			    border-radius: 13px;
+			    background: white;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    padding-top: 10px;
+			}
+			.progress-err-boxclass .progress-circle {
+				width: 40px;
+				height: 40px;
+				border: 2px solid red;
+				position: relative;
+			    border-radius: 100px;
+			    line-height: 40px;
+			    font-size: 40px;
+			    font-weight: 800;
+			    color: red;
+			    margin-bottom: 10px;
+			    padding-left: -10px;
+			    text-align: center;
+			}
+			.progress-err-boxclass .inner .title {
+				font-size: 18px;
+			    font-weight: 500;
+			    text-align: center;
+			    color: #007aff;
+			}
+			.progress-err-boxclass .inner .text {
+				font-family: inherit;
+			    font-size: 14px;
+			    margin: 5px 0 0;
+			    margin-bottom: 10px;
+			}

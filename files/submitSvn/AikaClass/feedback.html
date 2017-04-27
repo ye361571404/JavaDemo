@@ -1,0 +1,157 @@
+<!doctype html>
+<!--艾卡随堂个人中心的反馈页面  1.1版本-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet" />
+	</head>
+	<style>
+		.bigBack{
+			margin-top: 44px;
+			padding:0 25px;
+		}
+		.bigBack .bigFont{
+			font-size: 33px;
+			color: #474747;
+			height: 64px;
+			line-height: 64px;
+			font-weight: bolder;
+		}
+		.bigBack .wantFont{
+			font-size: 20px;
+			color: #464646;
+			height: 49px;
+			line-height: 49px;
+		}
+		.textBox{
+			border:1px solid #464646;
+			border-radius: 7px;
+			padding: 15px 13px;
+			font-size: 18px;
+			color: #a8a9a9;
+			line-height: 24px;
+		}
+		.contactText{
+			padding: 8px 15px;
+			margin-bottom: 45px;
+		}
+		.bigBack .contactWay{
+			height: 58px;
+			line-height: 58px;
+		}
+		.tijiao{
+			height: 44px;
+			line-height: 44px;
+			padding: 0;
+			font-size: 20px;
+			border:0;
+			background: -webkit-gradient(linear, left top, left bottom, from(#9bec43), to(#79e94b));
+		}
+	</style>
+	<body>
+		<div class="mui-navbar-inner mui-bar mui-bar-nav">
+			<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left returnBack" id="returnBack">
+				<img src="images/left.png" class="home-return" />
+			</button>
+		</div>
+		<div class="bigBack">
+			<div class="bigFont">我们表现如何？</div>
+			<div class="wantFont" style="padding-bottom: 5px;">想和我们说:</div>
+			<textarea class="textBox" id="textBox1" rows="2" placeholder="请留下您的问题和意见..."></textarea>
+			<div class="wantFont contactWay">联系方式</div>
+			<textarea class="textBox contactText" id="textBox2" rows="2" placeholder="方便我们和您联络..."></textarea>
+			<button type="button" class="mui-btn-green mui-btn-block tijiao" style=""><span>提交</span></button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var bodyH=window.screen.height;
+			var textBox=document.getElementsByClassName('textBox')[0];
+			textBox.style.height=(bodyH*0.277)+'px';
+			var contactText=document.getElementsByClassName('contactText')[0];
+			contactText.style.height=(bodyH*0.063)+'px';
+			contactText.style.paddingTop=(bodyH*0.009)+'px';
+			contactText.style.paddingBottom=(bodyH*0.009)+'px';
+			var tijiao=document.getElementsByClassName('tijiao')[0];
+			tijiao.style.height=(bodyH*0.066)+'px';
+			tijiao.style.lineHeight=(bodyH*0.066)+'px';
+			
+			
+			var feedBcakData={};
+			
+			//点击提交，收集数据
+			function addButtonsListener(bridge){
+				mui('.bigBack').off('tap','.tijiao');
+				mui('.bigBack').on('tap','.tijiao',function(){
+					var textBoxValue=document.getElementById('textBox1').value;
+					var textBoxValue2=document.getElementById('textBox2').value;
+					feedBcakData.takeTo=textBoxValue;
+					feedBcakData.contactWay=textBoxValue2;
+					console.log(feedBcakData);
+					//接口-----------------------------------------------
+					<js-ios>
+						bridge.callHandler('collectRetrunBack', feedBcakData, function(response) {
+	                   		//log('JS got response', response)
+	                	});
+					</js-ios>
+					<js-android>
+						window.xuming.backToParent(feedBcakData);
+					</js-android>				   
+					
+				});
+			}
+			
+						/////////////////bridge/////////////////////
+			
+			
+			<js-ios>			
+				window.onerror = function(err) {
+			        log('window.onerror: ' + err)
+				}
+				
+				
+			    function setupWebViewJavascriptBridge(callback) {
+			        if (window.WebViewJavascriptBridge) {
+			            return callback(WebViewJavascriptBridge);
+			        }
+			        if (window.WVJBCallbacks) {
+			            return window.WVJBCallbacks.push(callback);
+			        }
+			        window.WVJBCallbacks = [callback];
+			        var WVJBIframe = document.createElement('iframe');
+			        WVJBIframe.style.display = 'none';
+			        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+			        document.documentElement.appendChild(WVJBIframe);
+			        setTimeout(function() {
+			            document.documentElement.removeChild(WVJBIframe)
+			            }, 0);
+			    }
+	//		
+			    setupWebViewJavascriptBridge(function(bridge) {
+			
+			        bridge.registerHandler('feedbackJavascriptHandler', function(data, responseCallback) {
+	                    
+	                    addButtonsListener(bridge);
+	                   
+	   		        });
+	
+			    });			
+			</js-ios>
+			
+			
+						
+			/**/
+			
+			/////////////////bridge/////////////////////
+			
+			
+			
+//			bridge
+			addButtonsListener();
+		</script>
+	</body>
+
+</html>
