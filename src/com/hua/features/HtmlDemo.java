@@ -13,6 +13,9 @@ public class HtmlDemo {
 		File sourceFile = null;
 		for (int i = 0; i < listFiles.length; i++) {
 			sourceFile = new File(file.getName() + File.separator + listFiles[i].getName());
+			if(!sourceFile.isDirectory()){
+				continue;
+			}
 			System.out.println(sourceFile.getPath());
 			String sourceAndroid = sourceFile + "_android";
 			String sourceIos = sourceFile + "_ios";
